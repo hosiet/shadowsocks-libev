@@ -1,3 +1,22 @@
+shadowsocks-libev (2.3.1+dfsg-3) unstable; urgency=low
+
+  * Fixes a bug that can cause ss-server crash. (Closes: #391)
+  * Add man pages for binaries.
+
+ -- Boyuan Yang <073plan@gmail.com>  Wed, 09 Sep 2015 08:31:30 +0800
+
+shadowsocks-libev (2.3.1+dfsg-2) unstable; urgency=low
+
+  * Fix debian dependency control.
+
+ -- Boyuan Yang <073plan@gmail.com>  Mon, 07 Sep 2015 16:46:12 +0800
+
+shadowsocks-libev (2.3.1+dfsg-1) unstable; urgency=low
+
+  * Fix licensing issue. (Closes: #342)
+
+ -- Boyuan Yang <073plan@gmail.com>  Sun, 06 Sep 2015 23:48:23 +0800
+
 shadowsocks-libev (2.3.1-1) unstable; urgency=low
 
   * Fix an issue of connection cache of UDP relay.
