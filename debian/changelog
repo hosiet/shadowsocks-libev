@@ -1,3 +1,9 @@
+shadowsocks-libev (2.3.1+dfsg-2) unstable; urgency=low
+
+  * Fix debian dependency control.
+
+ -- Boyuan Yang <073plan@gmail.com>  Mon, 07 Sep 2015 16:46:12 +0800
+
 shadowsocks-libev (2.3.1+dfsg-1) unstable; urgency=low
 
   * Fix licensing issue. (Closes: #342)

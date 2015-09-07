@@ -12,7 +12,7 @@ Package: shadowsocks-libev
 Replaces: shadowsocks (<< 1.5.3-2)
 Breaks: shadowsocks (<< 1.5.3-2)
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libpolarssl0 (>= 1.2.5) | libpolarssl7 (>= 1.2.5)
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Lightweight and secure socks5 proxy.
  Shadowsocks-libev is a lightweight and secure socks5 proxy for
  embedded devices and low end boxes.
