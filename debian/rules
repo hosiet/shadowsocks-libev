@@ -21,4 +21,4 @@ override_dh_auto_configure:
         --enable-shared
 
 %:
-	dh $@ 
+	dh $@  --with systemd

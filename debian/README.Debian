@@ -1,6 +1,31 @@
 shadowsocks-libev for Debian
 ----------------------
 
-<possible notes regarding this package - if none, delete this file>
+The Debian packaging has added systemd support. By default, the dpkg installer
+will enable initscripts if the OS is using sysvinit, and systemd service unit
+file if the OS is using systemd. This is done automatically.
+
+Please be noted that we are also shipping extra systemd unit file through
+autotools. Those files are picked from Archlinux AUR in order to give the
+end user a better choice besides the default unit file required by Debian
+packaging.
+
+However, notice that if the packaging process is done on a system with systemd
+enabled **by default**, the Makefile **WILL** ship the extra systemd unit file
+no matter which platform the deb package will be installed. This may cause
+some problems if you are packaging on one system and then pass the deb package
+to another for installation. Take care when building package.
+
+
+Another problem is that shadowsocks-libev is licensed under GPLv3+. This will
+conflict with OpenSSL License when linked to OpenSSL library.
+
+However, upstream author is not willing to add an exception for openssl.
+In order to prevent license violations, This debian fork is providing
+an alternative option to use libpolarssl as ssl/tls library.
+
+ -- Boyuan Yang <073plan@gmail.com>  Tue, 14 Jul 2015 14:23:20 +0800
+
+(No special notes.)
 
  -- Max Lv <max.c.lv@gmail.com>  Sat, 06 Apr 2013 16:59:15 +0800
