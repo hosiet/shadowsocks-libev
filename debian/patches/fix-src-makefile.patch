@@ -1,0 +1,13 @@
+Switch compile standard to gnu11.
+Index: shadowsocks-libev/src/Makefile.am
+===================================================================
+--- shadowsocks-libev.orig/src/Makefile.am	2015-09-09 22:10:28.220972165 +0800
++++ shadowsocks-libev/src/Makefile.am	2015-09-10 16:31:37.229122258 +0800
+@@ -1,6 +1,6 @@
+ VERSION_INFO = 1:0:0
+ 
+-AM_CFLAGS = -g -O2 -Wall -Werror -Wno-deprecated-declarations -fno-strict-aliasing -std=gnu99 -D_GNU_SOURCE
++AM_CFLAGS = -g -O2 -Wall -Werror -std=gnu11 -D_GNU_SOURCE
+ AM_CFLAGS += $(PTHREAD_CFLAGS)
+ AM_CFLAGS += -I$(top_srcdir)/libev
+ AM_CFLAGS += -I$(top_srcdir)/libudns
