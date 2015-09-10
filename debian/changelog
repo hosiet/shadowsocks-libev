@@ -1,3 +1,11 @@
+shadowsocks-libev (2.3.1+dfsg-4) unstable; urgency=medium
+
+  * Import from latest upstream code.
+  * Repack into 4 packages for specified use.
+  * Eliminate all lintian warnings.
+
+ -- Boyuan Yang <073plan@gmail.com>  Thu, 10 Sep 2015 20:47:23 +0800
+
 shadowsocks-libev (2.3.1+dfsg-3) unstable; urgency=low
 
   * Fixes a bug that can cause ss-server crash. (Closes: #391)
