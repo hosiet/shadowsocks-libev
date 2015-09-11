@@ -1,3 +1,10 @@
+shadowsocks-libev (2.3.1+dfsg-4+b1) unstable; urgency=low
+
+  * update README.Debian.
+  * fix a packaging problem that config.json is missing.
+
+ -- Boyuan Yang <073plan@gmail.com>  Fri, 11 Sep 2015 19:15:29 +0800
+
 shadowsocks-libev (2.3.1+dfsg-4) unstable; urgency=medium
 
   * Import from latest upstream code.
