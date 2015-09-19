@@ -17,6 +17,7 @@ libshadowsocks.so.1 libshadowsocks1 #MINVER#
  cipher_context_set_iv@Base 2.3.1
  cipher_iv_size@Base 2.3.1
  cipher_key_size@Base 2.3.1
+ crc16@Base 2.3.3
  create_remote_socket@Base 2.3.1
  create_server_socket@Base 2.3.1
  crypto_aead_chacha20poly1305_abytes@Base 2.3.1
@@ -592,10 +593,12 @@ libshadowsocks.so.1 libshadowsocks1 #MINVER#
  sodium_runtime_has_sse2@Base 2.3.1
  sodium_runtime_has_sse3@Base 2.3.1
  sodium_version_string@Base 2.3.1
+ ss_check_crc@Base 2.3.3
  ss_decrypt@Base 2.3.1
  ss_decrypt_all@Base 2.3.1
  ss_encrypt@Base 2.3.1
  ss_encrypt_all@Base 2.3.1
+ ss_gen_crc@Base 2.3.3
  ss_itoa@Base 2.3.1
  ss_onetimeauth@Base 2.3.1
  ss_onetimeauth_verify@Base 2.3.1
