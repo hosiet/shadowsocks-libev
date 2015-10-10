@@ -1,3 +1,10 @@
+shadowsocks-libev (2.4.0+dfsg-1) unstable; urgency=medium
+
+  * Use PolarSSL as default.
+  * Linked using shared libraries.
+
+ -- Boyuan Yang <073plan@gmail.com>  Sat, 10 Oct 2015 21:03:43 +0800
+
 shadowsocks-libev (2.4.0-1) unstable; urgency=low
 
   * Update the one-time authentication
