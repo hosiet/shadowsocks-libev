@@ -1,6 +1,5 @@
 .deps/
 build/
-build-aux/
 /Makefile
 src/Makefile
 libcork/Makefile
