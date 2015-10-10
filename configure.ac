@@ -113,6 +113,16 @@ esac
 AM_CONDITIONAL(BUILD_REDIRECTOR, test "$os_support" = "linux")
 AM_CONDITIONAL(BUILD_WINCOMPAT, test "$os_support" = "mingw")
 
+# Checks for libraries.
+# FIXME: Replace `main' with a function in `-lev':
+AC_CHECK_LIB([ev], [main])
+# FIXME: Replace `main' with a function in `-lm':
+AC_CHECK_LIB([m], [main])
+# FIXME: Replace `main' with a function in `-lsodium':
+AC_CHECK_LIB([sodium], [main])
+# FIXME: Replace `main' with a function in `-ludns':
+AC_CHECK_LIB([udns], [main])
+
 dnl Checks for header files.
 
 dnl A special check required for <net/if.h> on Darwin. See
