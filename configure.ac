@@ -114,7 +114,6 @@ AM_CONDITIONAL(BUILD_REDIRECTOR, test "$os_support" = "linux")
 AM_CONDITIONAL(BUILD_WINCOMPAT, test "$os_support" = "mingw")
 
 dnl Checks for header files.
-AC_CHECK_HEADERS([limits.h stdint.h inttypes.h arpa/inet.h fcntl.h langinfo.h locale.h netdb.h netinet/in.h stdlib.h string.h strings.h unistd.h sys/ioctl.h])
 
 dnl A special check required for <net/if.h> on Darwin. See
 dnl http://www.gnu.org/software/autoconf/manual/html_node/Header-Portability.html.
@@ -166,16 +165,13 @@ esac
 
 AC_C_BIGENDIAN
 
-dnl Checks for typedefs, structures, and compiler characteristics.
-AC_C_INLINE
-AC_TYPE_SSIZE_T
-
-dnl Checks for header files.
 AC_HEADER_ASSERT
 AC_HEADER_STDC
 AC_HEADER_SYS_WAIT
+AC_CHECK_HEADERS([limits.h stdint.h inttypes.h arpa/inet.h fcntl.h langinfo.h locale.h netdb.h netinet/in.h stdlib.h string.h strings.h unistd.h sys/ioctl.h])
 
 dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_INLINE
 AC_C_CONST
 AC_TYPE_PID_T
 AC_TYPE_SIZE_T
