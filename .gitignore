@@ -2,8 +2,6 @@ build/
 .deps/
 /Makefile
 src/Makefile
-libev/Makefile
-libudns/Makefile
 libcork/Makefile
 libipset/Makefile
 autom4te.cache/
