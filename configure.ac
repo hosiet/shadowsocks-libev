@@ -5,7 +5,7 @@ AC_PREREQ([2.67])
 AC_INIT([shadowsocks-libev], [2.4.0], [max.c.lv@gmail.com])
 AC_CONFIG_SRCDIR([src/encrypt.c])
 AC_CONFIG_HEADERS([config.h])
-AC_CONFIG_AUX_DIR(auto)
+AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([subdir-objects foreign -Wall -Werror])
@@ -40,9 +40,6 @@ AC_PROG_LN_S
 AC_PROG_LIBTOOL
 AC_PROG_MAKE_SET
 AC_LANG_SOURCE
-
-dnl Checks for libev
-m4_include([libev/libev.m4])
 
 dnl Add library for mingw
 case $host in
@@ -233,13 +230,9 @@ else
     LIBS="$LIBS $PTHREAD_LIBS"
 fi
 
-AC_CONFIG_SUBDIRS([libsodium])
-
 AC_CONFIG_FILES([ shadowsocks-libev.pc
                  Makefile
                  libcork/Makefile
                  libipset/Makefile
-                 libudns/Makefile
-                 libev/Makefile
                  src/Makefile])
 AC_OUTPUT

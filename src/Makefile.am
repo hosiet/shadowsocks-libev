@@ -2,17 +2,13 @@ VERSION_INFO = 1:0:0
 
 AM_CFLAGS = -g -O2 -Wall -Werror -Wno-deprecated-declarations -fno-strict-aliasing -std=gnu99 -D_GNU_SOURCE
 AM_CFLAGS += $(PTHREAD_CFLAGS)
-AM_CFLAGS += -I$(top_srcdir)/libev
-AM_CFLAGS += -I$(top_srcdir)/libudns
 AM_CFLAGS += -I$(top_srcdir)/libipset/include
 AM_CFLAGS += -I$(top_srcdir)/libcork/include
-AM_CFLAGS += -I$(top_srcdir)/libsodium/src/libsodium/include
 
-SS_COMMON_LIBS = $(top_builddir)/libev/libev.la \
-				 $(top_builddir)/libipset/libipset.la \
-				 $(top_builddir)/libcork/libcork.la \
-				 $(top_builddir)/libsodium/src/libsodium/libsodium.la \
-				 $(INET_NTOP_LIB)
+SS_COMMON_LIBS = $(top_builddir)/libipset/libipset.la \
+		 $(top_builddir)/libcork/libcork.la \
+                 $(INET_NTOP_LIB) \
+                 -lev -lsodium -lm
 
 bin_PROGRAMS = ss-local ss-tunnel
 if !BUILD_WINCOMPAT
@@ -22,34 +18,34 @@ endif
 ss_local_SOURCES = utils.c \
                    jconf.c \
                    json.c \
-				   encrypt.c \
-				   udprelay.c \
-				   cache.c \
-				   acl.c \
-				   netutils.c \
-				   hmac-sha1.c \
-				   local.c
+                   encrypt.c \
+                   udprelay.c \
+                   cache.c \
+                   acl.c \
+                   netutils.c \
+                   hmac-sha1.c \
+                   local.c
 
 ss_tunnel_SOURCES = utils.c \
-					jconf.c \
-					json.c \
-					encrypt.c \
-					udprelay.c \
-					cache.c \
-					netutils.c \
-					hmac-sha1.c \
-					tunnel.c
-
-ss_server_SOURCES = utils.c \
-					netutils.c \
                     jconf.c \
                     json.c \
                     encrypt.c \
-					udprelay.c \
-					cache.c \
-					acl.c \
-					resolv.c \
-					hmac-sha1.c \
+                    udprelay.c \
+                    cache.c \
+                    netutils.c \
+                    hmac-sha1.c \
+                    tunnel.c
+
+ss_server_SOURCES = utils.c \
+                    netutils.c \
+                    jconf.c \
+                    json.c \
+                    encrypt.c \
+                    udprelay.c \
+                    cache.c \
+                    acl.c \
+                    resolv.c \
+                    hmac-sha1.c \
                     server.c
 
 ss_manager_SOURCES = utils.c \
@@ -61,9 +57,9 @@ ss_local_LDADD = $(SS_COMMON_LIBS)
 ss_tunnel_LDADD = $(SS_COMMON_LIBS)
 ss_server_LDADD = $(SS_COMMON_LIBS)
 ss_manager_LDADD = $(SS_COMMON_LIBS)
-ss_local_LDADD += $(top_builddir)/libudns/libudns.la
-ss_tunnel_LDADD += $(top_builddir)/libudns/libudns.la
-ss_server_LDADD += $(top_builddir)/libudns/libudns.la
+ss_local_LDADD += -ludns
+ss_tunnel_LDADD += -ludns
+ss_server_LDADD += -ludns
 
 ss_local_CFLAGS = $(AM_CFLAGS) -DUDPRELAY_LOCAL
 ss_tunnel_CFLAGS = $(AM_CFLAGS) -DUDPRELAY_LOCAL -DUDPRELAY_TUNNEL
@@ -80,14 +76,14 @@ ss_redir_SOURCES = utils.c \
                    jconf.c \
                    json.c \
                    encrypt.c \
-				   netutils.c \
-				   cache.c \
-				   udprelay.c \
-				   hmac-sha1.c \
+                   netutils.c \
+                   cache.c \
+                   udprelay.c \
+                   hmac-sha1.c \
                    redir.c
 ss_redir_CFLAGS = $(AM_CFLAGS) -DUDPRELAY_REDIR -DUDPRELAY_LOCAL
 ss_redir_LDADD = $(SS_COMMON_LIBS)
-ss_redir_LDADD += $(top_builddir)/libudns/libudns.la
+ss_redir_LDADD += -ludns
 endif
 
 lib_LTLIBRARIES = libshadowsocks.la
